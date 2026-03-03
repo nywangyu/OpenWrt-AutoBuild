@@ -16,7 +16,7 @@ rm -rf feeds/luci/applications/luci-app-qbittorrent
 rm -rf feeds/luci/applications/luci-app-openclash
 rm -rf feeds/luci/applications/luci-app-attendedsysupgrade
 rm -rf feeds/luci/themes/luci-theme-argon
-rm -rf package/dbone-packages/passwall/packages/v2ray-geoview
+rm -rf package/smpackage/passwall/packages/v2ray-geoview
 
 # 安装源
 ./scripts/feeds install -a -f
@@ -442,10 +442,10 @@ CONFIG_PACKAGE_luci-app-argon-config=y
 CONFIG_PACKAGE_luci-app-ddnsto=y
 CONFIG_PACKAGE_luci-app-dockerman=y
 CONFIG_PACKAGE_luci-app-homeproxy=y
-CONFIG_PACKAGE_luci-i18n-dufs-zh-cn=y
-CONFIG_PACKAGE_luci-i18n-nikki-zh-cn=y
-CONFIG_PACKAGE_luci-i18n-mosdns-zh-cn=y
-CONFIG_PACKAGE_luci-i18n-easytier-zh-cn=y
+CONFIG_PACKAGE_luci-app-dufs=y
+CONFIG_PACKAGE_luci-app-nikki=y
+CONFIG_PACKAGE_luci-app-mosdns=y
+CONFIG_PACKAGE_luci-app-easytier=y
 CONFIG_PACKAGE_luci-app-eqos-mtk=y
 CONFIG_PACKAGE_luci-app-lucky=y
 CONFIG_PACKAGE_luci-app-mtwifi-cfg=y
