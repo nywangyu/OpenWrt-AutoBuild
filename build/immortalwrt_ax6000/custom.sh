@@ -174,7 +174,9 @@ CONFIG_PACKAGE_luci-app-upnp=y
 
 # LuCI主题:
 CONFIG_PACKAGE_luci-theme-argon=y
+CONFIG_PACKAGE_luci-theme-bootstrap=n
 CONFIG_PACKAGE_luci-theme-edge=n
+
 EOF
 
 # 
