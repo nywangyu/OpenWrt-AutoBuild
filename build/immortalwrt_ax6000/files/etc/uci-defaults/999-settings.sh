@@ -1,25 +1,13 @@
 
 #!/bin/bash
 
-# 设置屏幕定时开关
-sed -i '/athena_led/d' /etc/crontabs/root
-echo '30 6 * * * uci set athena_led.config.lightLevel="3" && uci commit athena_led && /etc/init.d/athena_led reload && logger "屏幕亮度设置"' >> /etc/crontabs/root
-echo '0 22 * * * uci set athena_led.config.lightLevel="1" && uci commit athena_led && /etc/init.d/athena_led reload && logger "屏幕亮度设置"' >> /etc/crontabs/root
-crontab /etc/crontabs/root
-# 设置屏幕配置
-uci set athena_led.config.enable="1"
-uci set athena_led.config.lightLevel="3"
-uci set athena_led.config.option="timeBlink"
-uci commit athena_led
-/etc/init.d/athena_led restart
-
 # 软件源设置
 cat << EOF > "/etc/opkg/distfeeds.conf"
-src/gz openwrt_base https://downloads.immortalwrt.org/releases/24.10-SNAPSHOT/packages/aarch64_cortex-a53/base/
-src/gz openwrt_luci https://downloads.immortalwrt.org/releases/24.10-SNAPSHOT/packages/aarch64_cortex-a53/luci/
-src/gz openwrt_packages https://downloads.immortalwrt.org/releases/24.10-SNAPSHOT/packages/aarch64_cortex-a53/packages
-src/gz openwrt_routing https://downloads.immortalwrt.org/releases/24.10-SNAPSHOT/packages/aarch64_cortex-a53/routing
-src/gz openwrt_telephony https://downloads.immortalwrt.org/releases/24.10-SNAPSHOT/packages/aarch64_cortex-a53/telephony
+src/gz openwrt_base https://downloads.immortalwrt.org/releases/24.10.5/packages/aarch64_cortex-a53/base/
+src/gz openwrt_luci https://downloads.immortalwrt.org/releases/24.10.5/packages/aarch64_cortex-a53/luci/
+src/gz openwrt_packages https://downloads.immortalwrt.org/releases/24.10.5/packages/aarch64_cortex-a53/packages
+src/gz openwrt_routing https://downloads.immortalwrt.org/releases/24.10.5/packages/aarch64_cortex-a53/routing
+src/gz openwrt_telephony https://downloads.immortalwrt.org/releases/24.10.5/packages/aarch64_cortex-a53/telephony
 EOF
 
 # 指示灯定义
@@ -94,23 +82,8 @@ EOC
 
 # 配置无线接口
 #            接口顺序    信道     HT频宽      功率      SSID               密码            加密方式
-configure_wifi 0      149     'HE80'      24     'JDC_Guest'       '123456789'     'sae-mixed'
-configure_wifi 1      6       'HE40'      25     'MX-SmartHome'    '123456789'     'psk2+ccmp'
-configure_wifi 2      44      'HE160'     25     'AX6600_5G'       '123456789'     'sae-mixed'
-
-# 添加 radio1 的第二个接口
-uci set wireless.wifinet3=wifi-iface
-uci set wireless.wifinet3.device='radio1'
-uci set wireless.wifinet3.mode='ap'
-uci set wireless.wifinet3.network='lan'
-uci set wireless.wifinet3.ssid='AX6600'
-uci set wireless.wifinet3.encryption='psk2+ccmp'
-uci set wireless.wifinet3.key='123456789'
-uci set wireless.wifinet3.time_advertisement='2'
-uci set wireless.wifinet3.time_zone='CST-8'
-uci set wireless.wifinet3.wnm_sleep_mode='1'
-uci set wireless.wifinet3.wnm_sleep_mode_no_keys='1'
-uci set wireless.wifinet3.disassoc_low_ack='0'
+configure_wifi 0      6       'HE40'      25     'ImmortalWrt-2.4G'    '123456789'     'psk2+ccmp'
+configure_wifi 1      44      'HE160'     25     'QWRT-5G'       '123456789'     'sae-mixed'
 
 # 提交并重启
 uci commit wireless
