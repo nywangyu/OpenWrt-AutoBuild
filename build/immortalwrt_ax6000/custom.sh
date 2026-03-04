@@ -146,11 +146,13 @@ touch ./.config
 
 # 编译 百里 AX6000 固件:
 cat >> .config <<EOF
-# TARGET config
 CONFIG_TARGET_mediatek=y
 CONFIG_TARGET_mediatek_filogic=y
 CONFIG_TARGET_mediatek_filogic_DEVICE_jdcloud_re-cp-03=y
+EOF
 
+# LuCI插件
+cat >> .config <<EOF
 CONFIG_PACKAGE_luci-app-argon-config=y
 CONFIG_PACKAGE_luci-app-ddnsto=y
 CONFIG_PACKAGE_luci-app-dockerman=y
@@ -170,6 +172,11 @@ CONFIG_PACKAGE_luci-app-turboacc-mtk=y
 CONFIG_PACKAGE_luci-app-upnp=y
 EOF
 
+# LuCI主题:
+cat >> .config <<EOF
+CONFIG_PACKAGE_luci-theme-argon=y
+CONFIG_PACKAGE_luci-theme-edge=n
+EOF
 
 # 
 # ●●●●●●●●●●●●●●●●●●●●●●●●固件定制部分结束●●●●●●●●●●●●●●●●●●●●●●●● #
