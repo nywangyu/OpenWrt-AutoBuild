@@ -5,7 +5,7 @@
 # sudo -E apt-get -y install rename
 
 # 更新源
-# ./scripts/feeds clean
+./scripts/feeds clean
 ./scripts/feeds update
 
 # 添加第三方软件包
@@ -13,7 +13,7 @@
 git clone https://github.com/db-one/dbone-packages.git -b 23.05 package/dbone-packages
 git clone https://github.com/EasyTier/luci-app-easytier.git package/luci-app-easytier
 git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
-git clone  https://github.com/gdy666/luci-app-lucky.git package/lucky
+git clone https://github.com/gdy666/luci-app-lucky.git package/lucky
 
 
 # 删除部分默认包
@@ -21,7 +21,7 @@ rm -rf feeds/luci/applications/luci-app-qbittorrent
 rm -rf feeds/luci/applications/luci-app-openclash
 rm -rf feeds/luci/applications/luci-app-attendedsysupgrade
 rm -rf feeds/luci/themes/luci-theme-argon
-rm -rf package/smpackage/passwall/packages/v2ray-geoview
+rm -rf package/dbone-packages/passwall/packages/v2ray-geoview
 
 # 安装源
 ./scripts/feeds install -a -f
@@ -174,7 +174,6 @@ CONFIG_PACKAGE_luci-app-upnp=y
 
 # LuCI主题:
 CONFIG_PACKAGE_luci-theme-argon=y
-CONFIG_PACKAGE_luci-theme-bootstrap=n
 CONFIG_PACKAGE_luci-theme-edge=n
 
 EOF
