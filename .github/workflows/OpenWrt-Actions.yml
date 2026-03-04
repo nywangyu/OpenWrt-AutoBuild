@@ -236,13 +236,6 @@ jobs:
           )
           fi
 
-          echo "执行全局脚本"
-          if [ -f "${GITHUB_WORKSPACE}/openwrt/build/custom.sh" ]; then
-          (
-            chmod +x ${GITHUB_WORKSPACE}/openwrt/build/custom.sh
-            /bin/bash "${GITHUB_WORKSPACE}/openwrt/build/custom.sh"
-          )
-          fi
 
           echo "复制脚本文件..."
           if [ -n "$(ls -A "${GITHUB_WORKSPACE}/openwrt/build/scripts/files" 2>/dev/null)" ]; then
