@@ -154,20 +154,19 @@ EOF
 # LuCI插件
 cat >> .config <<EOF
 CONFIG_PACKAGE_luci-app-argon-config=y
-CONFIG_PACKAGE_luci-app-ddnsto=y
+CONFIG_PACKAGE_luci-app-ddns=y
 CONFIG_PACKAGE_luci-app-dockerman=y
 CONFIG_PACKAGE_luci-app-homeproxy=y
 CONFIG_PACKAGE_luci-app-dufs=y
 CONFIG_PACKAGE_luci-app-nikki=y
 CONFIG_PACKAGE_luci-app-mosdns=y
 CONFIG_PACKAGE_luci-app-easytier=y
-CONFIG_PACKAGE_luci-app-eqos-mtk=y
 CONFIG_PACKAGE_luci-app-lucky=y
-CONFIG_PACKAGE_luci-app-mtwifi-cfg=y
 CONFIG_PACKAGE_luci-app-openclash=y
 CONFIG_PACKAGE_luci-app-quickstart=y
 CONFIG_PACKAGE_luci-app-samba4=y
 CONFIG_PACKAGE_luci-app-store=y
+CONFIG_PACKAGE_luci-app-ttyd=y
 CONFIG_PACKAGE_luci-app-turboacc-mtk=y
 CONFIG_PACKAGE_luci-app-upnp=y
 EOF
