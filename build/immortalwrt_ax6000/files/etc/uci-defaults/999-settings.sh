@@ -77,7 +77,7 @@ EOC
 # 配置无线接口
 #            接口顺序    信道     HT频宽      功率      SSID               密码            加密方式
 configure_wifi 0      6       'HE40'      25     'ImmortalWrt-2.4G'    '123456789'     'psk2+ccmp'
-configure_wifi 1      44      'HE160'     25     'QWRT-5G'       '123456789'     'sae-mixed'
+configure_wifi 1      44      'HE80'     25     'QWRT-5G'       '123456789'     'sae-mixed'
 
 # 提交并重启
 uci commit wireless
