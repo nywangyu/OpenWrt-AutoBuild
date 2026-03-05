@@ -153,7 +153,7 @@ touch ./.config
 cat >> .config <<EOF
 CONFIG_TARGET_mediatek=y
 CONFIG_TARGET_mediatek_filogic=y
-CONFIG_TARGET_mediatek_filogic_DEVICE_jdcloud_re-cp-03=y
+CONFIG_TARGET_mediatek_filogic_DEVICE_jdcloud_re-cs-05=y
 
 # LuCI插件
 CONFIG_PACKAGE_luci-app-argon-config=y
