@@ -17,7 +17,7 @@ on:
         type: boolean
         default: false
       Lean_x86_64_Long:
-        description: '编译 Lean_x86_64_Long'
+        description: '编译 Lean_ax6000'
         type: boolean
         default: false
       immortalwrt_x86_64:
