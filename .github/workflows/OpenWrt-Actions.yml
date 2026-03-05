@@ -16,12 +16,12 @@ on:
         description: '编译 Lean_x86_64'
         type: boolean
         default: false
-      Lean_x86_64_Long:
+      Lean_ax6000:
         description: '编译 Lean_ax6000'
         type: boolean
         default: false
-      immortalwrt_x86_64:
-        description: '编译 immortalwrt_x86_64'
+      immortalwrt_360v6:
+        description: '编译 immortalwrt_360v6'
         type: boolean
         default: false
       immortalwrt_ax6000:
@@ -75,12 +75,12 @@ jobs:
           MODELS=()
           # 定时触发编译全部
           if [ "${{ github.event_name }}" = "schedule" ]; then
-            MODELS=("Lean_x86_64" "Lean_x86_64_Long" "immortalwrt_x86_64" "immortalwrt_ax6000")
+            MODELS=("Lean_x86_64" "Lean_ax6000" "immortalwrt_360v6" "immortalwrt_ax6000")
           else
             # 手动触发判断
             [ "${{ github.event.inputs.Lean_x86_64 }}" = "true" ] && MODELS+=("Lean_x86_64")
-            [ "${{ github.event.inputs.Lean_x86_64_Long }}" = "true" ] && MODELS+=("Lean_x86_64_Long")
-            [ "${{ github.event.inputs.immortalwrt_x86_64 }}" = "true" ] && MODELS+=("immortalwrt_x86_64")
+            [ "${{ github.event.inputs.Lean_ax6000 }}" = "true" ] && MODELS+=("Lean_ax6000")
+            [ "${{ github.event.inputs.immortalwrt_360v6 }}" = "true" ] && MODELS+=("immortalwrt_360v6")
             [ "${{ github.event.inputs.immortalwrt_ax6000 }}" = "true" ] && MODELS+=("immortalwrt_ax6000")
           fi
           
