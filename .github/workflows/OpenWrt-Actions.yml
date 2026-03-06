@@ -90,7 +90,7 @@ jobs:
 
   build:
     needs: [build-openwrt]
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-22.04
     env:
       CACHE_BUILD: ${{ github.event.inputs.CACHE_BUILD || 'true' }}
       BUILD_SSH: ${{ github.event.inputs.Build_SSH || 'false' }}
