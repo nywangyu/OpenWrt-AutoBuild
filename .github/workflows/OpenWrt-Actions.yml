@@ -12,7 +12,7 @@ name: 编译OpenWrt固件
 on:
   workflow_dispatch:
     inputs:
-      Lean_x86_64:
+      Openwrt_ax6000:
         description: '编译 Openwrt_ax6000'
         type: boolean
         default: false
