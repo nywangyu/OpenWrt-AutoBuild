@@ -75,7 +75,7 @@ jobs:
           MODELS=()
           # 定时触发编译全部
           if [ "${{ github.event_name }}" = "schedule" ]; then
-            MODELS=("Lean_x86_64" "Lean_ax6000" "immortalwrt_360v6" "immortalwrt_ax6000")
+            MODELS=("Lean_ax6000" "immortalwrt_360v6" "immortalwrt_ax6000")
           else
             # 手动触发判断
             [ "${{ github.event.inputs.Lean_x86_64 }}" = "true" ] && MODELS+=("Lean_x86_64")
