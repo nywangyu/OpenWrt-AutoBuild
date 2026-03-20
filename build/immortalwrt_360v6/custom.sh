@@ -214,7 +214,7 @@ CONFIG_PACKAGE_luci-app-easytier=y
 CONFIG_PACKAGE_luci-app-lucky=y
 CONFIG_PACKAGE_luci-app-openclash=y
 CONFIG_PACKAGE_luci-app-quickstart=n
-CONFIG_PACKAGE_luci-app-store=y
+CONFIG_PACKAGE_luci-app-store=n
 CONFIG_PACKAGE_luci-app-ttyd=y
 CONFIG_PACKAGE_luci-app-upnp=y
 
