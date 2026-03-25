@@ -23,6 +23,7 @@ rm -rf feeds/luci/applications/luci-app-openclash
 rm -rf feeds/luci/applications/luci-app-attendedsysupgrade
 rm -rf feeds/luci/themes/luci-theme-argon
 rm -rf package/dbone-packages/passwall/packages/v2ray-geoview
+rm -rf feeds/packages/net/{alist,adguardhome,mosdns,xray*,v2ray*,sing*,smartdns} feeds/packages/utils/v2dat feeds/packages/lang/golang
 
 # 安装源
 ./scripts/feeds install -a -f
