@@ -10,7 +10,7 @@
 
 # 添加第三方软件包
 git clone https://github.com/kiddin9/op-packages.git package/dbone-packages
-rm -rf feeds/packages/net/{alist,adguardhome,mosdns,xray*,v2ray*,sing*,smartdns} feeds/packages/utils/v2dat feeds/packages/lang/golang
+rm -rf feeds/packages/lang/golang
 git clone https://github.com/kenzok8/golang -b 1.26 feeds/packages/lang/golang
 # git clone https://github.com/db-one/dbone-packages.git -b 23.05 package/dbone-packages
 # git clone https://github.com/EasyTier/luci-app-easytier.git package/luci-app-easytier
