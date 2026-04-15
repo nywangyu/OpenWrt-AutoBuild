@@ -112,7 +112,7 @@ jobs:
           echo "调试命令: ${{ github.event.inputs.Custom_Commands }}"
 
       - name: Checkout 仓库
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: 检测脚本设置
         run: |
@@ -355,7 +355,7 @@ jobs:
           cp openwrt/tmp/.packageinfo ./upload_tmp/${{matrix.target}}.packageinfo
 
       - name: 上传插件列表和依赖归递文件
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: ${{matrix.target}}_OpenWrt_packageinfo_${{ env.FILE_TIME }}
           path: ./upload_tmp/
@@ -434,42 +434,42 @@ jobs:
 
       - name: 上传固件文件
         if: env.BUILD_MOD == 'false' && env.UPLOAD_FIRMWARE == 'true'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: ${{matrix.target}}_OpenWrt_firmware_${{ env.FILE_TIME }}
           path: ./artifact/firmware/
 
       - name: 上传PVE/KVM镜像文件
         if: env.BUILD_MOD == 'false' && env.UPLOAD_QCOW2 == 'true'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: ${{matrix.target}}_OpenWrt_pvekvm_${{ env.FILE_TIME }}
           path: ./artifact/pvekvm/
 
       - name: 上传Hyper-V镜像文件
         if: env.BUILD_MOD == 'false' && env.UPLOAD_VHDX == 'true'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: ${{matrix.target}}_OpenWrt_hyperv_${{ env.FILE_TIME }}
           path: ./artifact/hyperv/
 
       - name: 上传VMware镜像文件
         if: env.BUILD_MOD == 'false' && env.UPLOAD_VMDK == 'true'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: ${{matrix.target}}_OpenWrt_vmware_${{ env.FILE_TIME }}
           path: ./artifact/vmware/
 
       - name: 上传插件包文件
         if: env.BUILD_MOD == 'false' && env.UPLOAD_IPK == 'true'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: ${{matrix.target}}_OpenWrt_package_${{ env.FILE_TIME }}
           path: ./artifact/package/
 
       - name: 上传固件信息
         if: env.BUILD_MOD == 'false' && env.UPLOAD_CONFIG == 'true'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: ${{matrix.target}}_OpenWrt_buildinfo_${{ env.FILE_TIME }}
           path: ./artifact/buildinfo/
@@ -510,7 +510,7 @@ jobs:
           keep_minimum_runs: 0
 
       - name: 删除自动发布的旧固件
-        uses: shidahuilang/delete-older-releases@main
+        uses: dev-drprasad/delete-older-releases@v0.3.4
         with:
           keep_latest: 6         #保留多少个releases不删除
           delete_tags: true
