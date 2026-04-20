@@ -417,7 +417,7 @@ jobs:
           mkdir -p ./artifact/package
           mkdir -p ./artifact/buildinfo
           rm -rf $(find openwrt/bin/targets/ -type d -name "packages")
-          cp -rf $(find openwrt/bin/packages/ -type f -name "*.ipk") ./artifact/package/ || true
+          cp -rf $(find openwrt/bin/packages/ -type f -name "*.apk") ./artifact/package/ || true
           cp -rf $(find openwrt/bin/targets/ -type f -name "*.buildinfo" -o -name "*.manifest") ./artifact/buildinfo/ || true
           # cp -rf $(find openwrt/bin/targets/ -type f -name "*squashfs*efi*img*") ./artifact/firmware/
           cp -rf $(find openwrt/bin/targets/ -type f \( -name "*squashfs*efi*img*" -o -name "*squashfs*sysupgrade*bin*" -o -name "*squashfs*sysupgrade*itb*" -o -name "*squashfs*factory*bin*" \) ) ./artifact/firmware/
