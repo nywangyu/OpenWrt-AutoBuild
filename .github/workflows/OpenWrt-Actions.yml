@@ -510,7 +510,7 @@ jobs:
           keep_minimum_runs: 0
 
       - name: 删除自动发布的旧固件
-        uses: dev-drprasad/delete-older-releases@v0.3.4
+        uses: 7by24/delete-older-releases@v1
         with:
           keep_latest: 6         #保留多少个releases不删除
           delete_tags: true
