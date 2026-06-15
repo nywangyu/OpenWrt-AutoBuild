@@ -9,7 +9,7 @@
 ./scripts/feeds update
 
 # 添加第三方软件包
-git clone https://github.com/kenzok8/small-package.git package/dbone-packages
+git clone https://github.com/nywangyu/OpenWrt-Packages.git package/dbone-packages
 # git clone https://github.com/db-one/dbone-packages.git -b 23.05 package/dbone-packages
 # git clone https://github.com/EasyTier/luci-app-easytier.git package/luci-app-easytier
 # git clone https://github.com/sbwml/luci-app-mosdns.git -b v5 package/mosdns
@@ -154,6 +154,7 @@ CONFIG_TARGET_mediatek_filogic_DEVICE_jdcloud_re-cp-03=y
 
 # LuCI插件
 CONFIG_PACKAGE_luci-app-argon-config=y
+CONFIG_PACKAGE_luci-app-aurora-config=y
 CONFIG_PACKAGE_luci-app-ddns=y
 CONFIG_PACKAGE_luci-app-dockerman=y
 CONFIG_PACKAGE_luci-app-homeproxy=y
@@ -162,7 +163,7 @@ CONFIG_PACKAGE_luci-app-nikki=y
 CONFIG_PACKAGE_luci-app-mosdns=y
 CONFIG_PACKAGE_luci-app-easytier=y
 CONFIG_PACKAGE_luci-app-lucky=y
-CONFIG_PACKAGE_luci-app-openclash=y
+CONFIG_PACKAGE_luci-app-openclash=n
 CONFIG_PACKAGE_luci-app-quickfile=n
 CONFIG_PACKAGE_luci-app-quickstart=y
 CONFIG_PACKAGE_luci-app-samba4=y
@@ -172,6 +173,7 @@ CONFIG_PACKAGE_luci-app-upnp=y
 
 # LuCI主题:
 CONFIG_PACKAGE_luci-theme-argon=y
+CONFIG_PACKAGE_luci-theme-aurora=y
 CONFIG_PACKAGE_luci-theme-edge=n
 
 EOF
