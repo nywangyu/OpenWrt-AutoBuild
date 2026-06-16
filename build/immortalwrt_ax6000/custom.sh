@@ -20,6 +20,7 @@ git clone https://github.com/nywangyu/OpenWrt-Packages.git package/dbone-package
 rm -rf feeds/luci/applications/luci-app-qbittorrent
 rm -rf feeds/luci/applications/luci-app-openclash
 rm -rf feeds/luci/applications/luci-app-attendedsysupgrade
+rm -rf feeds/luci/applications/luci-app-mosdns
 rm -rf feeds/luci/themes/luci-theme-argon
 # 安装源
 ./scripts/feeds install -a -f
