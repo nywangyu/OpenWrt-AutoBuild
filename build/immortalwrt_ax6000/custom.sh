@@ -9,7 +9,7 @@
 ./scripts/feeds update
 
 # 添加第三方软件包
-git clone https://github.com/nywangyu/OpenWrt-Packages.git package/dbone-packages
+git clone https://github.com/kenzok8/small-package.git package/dbone-packages
 # git clone https://github.com/db-one/dbone-packages.git -b 23.05 package/dbone-packages
 # git clone https://github.com/EasyTier/luci-app-easytier.git package/luci-app-easytier
 # git clone https://github.com/sbwml/luci-app-mosdns.git -b v5 package/mosdns
@@ -160,7 +160,7 @@ CONFIG_PACKAGE_luci-app-dockerman=y
 CONFIG_PACKAGE_luci-app-homeproxy=y
 CONFIG_PACKAGE_luci-app-dufs=y
 CONFIG_PACKAGE_luci-app-nikki=y
-CONFIG_PACKAGE_luci-app-mosdns=n
+CONFIG_PACKAGE_luci-app-mosdns=y
 CONFIG_PACKAGE_luci-app-easytier=y
 CONFIG_PACKAGE_luci-app-lucky=y
 CONFIG_PACKAGE_luci-app-openclash=n
